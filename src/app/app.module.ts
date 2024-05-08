@@ -6,19 +6,21 @@ import { AppComponent } from './app.component';
 import { FormComponent } from "./components/form/form.component";
 import { TableComponent } from "./components/table/table.component";
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    FormComponent,
+    TableComponent,
   ],
   providers: [],
   bootstrap: [AppComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormComponent,
-    TableComponent,
-    NgbModule
+    NgbModule,
+    FormsModule
   ]
 })
 export class AppModule { }

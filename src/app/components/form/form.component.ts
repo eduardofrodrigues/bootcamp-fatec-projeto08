@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import Car from '../../models/Car';
 
 @Component({
@@ -9,4 +9,12 @@ import Car from '../../models/Car';
 export class FormComponent {
   @Input()
   car: Car = {} as Car;
+
+  @Output()
+  saveEmitter = new EventEmitter();
+
+  save() {
+    this.saveEmitter.emit();
+  }
+
 }

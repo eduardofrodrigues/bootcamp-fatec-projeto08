@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import Car from './models/Car';
 
 @Component({
   selector: 'app-root',
@@ -8,7 +7,4 @@ import Car from './models/Car';
 })
 export class AppComponent {
   title = 'bootcamp-fatec-projeto08';
-
-  car: Car = {} as Car;
-
 }

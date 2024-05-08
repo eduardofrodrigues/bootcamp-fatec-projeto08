@@ -7,6 +7,9 @@ import Car from '../../models/Car';
   styleUrl: './table.component.css'
 })
 export class TableComponent {
+
+  car: Car = {} as Car;
+
   cars: Car[] = [
     {
       id: 1,
@@ -23,4 +26,11 @@ export class TableComponent {
       year: 2025
     }
   ]
+
+  save() {
+    this.car.id = this.cars.length + 1;
+    this.cars.push(this.car);
+    this.car = {} as Car;
+  }
+
 }

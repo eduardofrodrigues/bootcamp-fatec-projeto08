@@ -12,25 +12,31 @@ export class TableComponent {
   isUpdate: boolean = false
 
   cars: Car[] = [
-    {
-      id: 1,
-      name: "Corolla",
-      manufacturer: "Toyota",
-      price: 184000,
-      year: 2024
-    },
-    {
-      id: 2,
-      name: "Corolla",
-      manufacturer: "Toyota",
-      price: 210000,
-      year: 2025
-    }
+    /*  
+      {
+        id: 1,
+        name: "Corolla",
+        manufacturer: "Toyota",
+        price: 184000,
+        year: 2024
+      },
+      {
+        id: 2,
+        name: "Corolla",
+        manufacturer: "Toyota",
+        price: 210000,
+        year: 2025
+      } 
+    */
   ]
 
   save() {
     if (!this.isUpdate) {
-      this.car.id = this.cars.length + 1;
+      let maxId = 0;
+      this.cars.map((car) => {
+        maxId = Math.max(maxId, car.id);
+      })
+      this.car.id = maxId + 1;
       this.cars.push(this.car);
     }
     this.car = {} as Car;

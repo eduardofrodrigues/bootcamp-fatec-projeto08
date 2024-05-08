@@ -33,4 +33,8 @@ export class TableComponent {
     this.car = {} as Car;
   }
 
+  remove(carToRemove: Car) {
+    this.cars = this.cars.filter((car) => car.id !== carToRemove.id)
+  }
+
 }

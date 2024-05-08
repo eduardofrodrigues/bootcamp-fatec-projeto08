@@ -9,6 +9,7 @@ import Car from '../../models/Car';
 export class TableComponent {
 
   car: Car = {} as Car;
+  isUpdate: boolean = false
 
   cars: Car[] = [
     {
@@ -28,13 +29,20 @@ export class TableComponent {
   ]
 
   save() {
-    this.car.id = this.cars.length + 1;
-    this.cars.push(this.car);
+    if (!this.isUpdate) {
+      this.car.id = this.cars.length + 1;
+      this.cars.push(this.car);
+    }
     this.car = {} as Car;
   }
 
   remove(carToRemove: Car) {
     this.cars = this.cars.filter((car) => car.id !== carToRemove.id)
+  }
+
+  update(car: Car) {
+    this.isUpdate = true;
+    this.car = car;
   }
 
 }

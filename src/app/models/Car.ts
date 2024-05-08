@@ -1,6 +1,6 @@
 interface Car {
   name: string,
-  manufacture: string,
+  manufacturer: string,
   price: number,
   year: number
 }
